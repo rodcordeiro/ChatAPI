@@ -8,7 +8,7 @@ import helmet from '@fastify/helmet';
 import compression from '@fastify/compress';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import fastifyCsrf from '@fastify/csrf-protection';
-import fs from 'fs';
+// import fs from 'fs';
 
 import { AppModule } from '@/app.module';
 import { AppUtils } from '@/common/utils/app.util';
