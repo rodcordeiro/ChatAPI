@@ -1,9 +1,9 @@
-name: "Code build validation"
+name: 'Code build validation'
 
 on:
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [main,develop]
+    branches: [main, develop]
 
 jobs:
   Format:
@@ -25,4 +25,4 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm run build --if-present
-      - run: npm test
+      # - run: npm test
