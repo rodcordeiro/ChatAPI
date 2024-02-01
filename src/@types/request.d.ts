@@ -5,4 +5,20 @@ declare global {
   export type ChatRequest = {
     user: UsersEntity;
   } & FastifyRequest;
+  export interface JwtPayload {
+    payload: string;
+    nbf: number;
+    exp: number;
+    iat: number;
+  }
+  // export interface Message {
+  //   data: {
+  //     content: string;
+  //   };
+  //   metadata: {
+  //     author: string;
+  //     createdAt: string;
+  //     to: string;
+  //   };
+  // }
 }
