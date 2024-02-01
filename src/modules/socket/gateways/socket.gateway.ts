@@ -41,15 +41,12 @@ export class SocketGateway implements OnGatewayConnection, OnGatewayInit {
     console.log({ data });
     return client.emit('response', data);
   }
+
   @SubscribeMessage('message')
   async message(
-    @ConnectedSocket() client: Socket,
+    // @ConnectedSocket() client: Socket,
     @MessageBody() data: ChatJS.Message,
   ) {
-    // console.log(client, data);
-    this.server.to(data.metadata.to).emit('message', {
-      ...data,
-      metadata: { ...data.metadata, author: 'server' },
-    });
+    this._socketService.handleSendDirectMessage(data);
   }
 }
