@@ -22,7 +22,6 @@ export class UsersService {
 
   async findBy(options: FindOneOptions<UsersEntity>['where']) {
     try {
-      console.log({ options });
       const user = await this._usersRepository.findOneOrFail({
         where: {
           ...options,
